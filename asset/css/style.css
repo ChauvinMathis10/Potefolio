@@ -1,0 +1,544 @@
+html{
+    scroll-behavior: smooth;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+main > section {
+    padding: 2rem 0;
+}
+
+/* /----------------------------------Header------------------------------------------------------------*/ 
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000
+}
+
+#header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header .container ul{
+    display: flex;
+    gap: 1rem ;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#header nav ul a{
+color: white;
+text-decoration: none;
+}
+#header .underline :hover{
+    text-decoration:underline;
+    }
+
+#header .logo{
+    height: 50px; ;
+} 
+
+#header .logo img{
+    height: 100%;
+}
+
+/* /-------------------------------------Menu----------------------------------------------------*/ 
+
+ #menus #menuToggle
+ {
+   display: block;
+   position: fixed;
+   top: 20px;
+   left: 20px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menus #menuToggle a
+ {
+   text-decoration: none;
+   color: #acabab;
+   transition: color 0.3s ease;
+ }
+ 
+ #menus #menuToggle a:hover
+ {
+   color: rgb(255, 255, 255);
+ }
+ 
+ 
+ #menus #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; 
+   z-index: 2; 
+   
+   -webkit-touch-callout: none;
+ }
+ 
+
+  #menus #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition:0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menus #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menus #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+
+  #menus #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #b4b2b2;
+ }
+ 
+ 
+  #menus #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+
+
+  #menus #menu
+ {
+   position: absolute;
+   max-width: 306px;
+   width: 100vw;
+   max-height: 100vh;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   box-sizing: border-box;
+   overflow-y: auto;
+   background: #1b1b1b;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+
+ 
+
+/* /----------------------------------Autre------------------------------------------------------------*/ 
+#home {
+    height: 100vh;
+    background-image: url('../image/Reseau.jpg');
+    background-size: cover;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    background-blend-mode: overlay;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+#img{
+    height: 400px;
+      display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#propos .container{
+    display: flex;
+    gap: 1rem;
+}
+h3 {
+    text-decoration: underline;
+}
+
+/* /----------------------------------Tablette------------------------------------------------------------*/ 
+@media screen and (max-width: 800px) {
+    .container{
+        width: 100%;
+    }
+
+    #Services .tt {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#propos .container {
+    flex-direction: column;
+}
+
+
+/* --------------------------------------Smartphone ----------------------------------------------------*/
+@media screen and (max-width: 500px) {
+    #services .tt {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* /----------------------------------Bouton------------------------------------------------------------*/ 
+
+@property --color-primary {
+    syntax: "<color>";
+    inherits: false;
+}
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        transition: 0.5s;
+    }
+    
+    .btn-primary {
+        background-color: black;
+        color: white;
+        border-color: black;
+    }
+    
+    .btn-primary:hover {
+        background-color: gray;
+        color: black;
+        border-color: black;
+    }
+    
+    .btn-outline-primary {
+        background-color: black;
+        color: white;
+        border-color: black;
+    }
+    
+    .btn-outline-primary:hover {
+        background-color: gray;
+        color:black ;
+        border-color: black;
+    }
+
+    #backToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        text-decoration: none;
+}
+
+    /* ------------------------------------------classe utilitaire----------------------------- ----------*/
+
+    body{
+        background-color: grey;
+        color: black;
+    }
+
+    
+    #cequejeveux {
+       border: 3px solid black;
+       text-align: center;
+       text-decoration: underline;
+    }
+
+    
+    
+    /* /-------------------------------------Projet------------------------------------------------------------*/ 
+    .gallery {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .image-container {
+        position: relative;
+        width: 50%; 
+        margin: 5px;
+        overflow: hidden;
+        
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 1
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8); 
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s ;
+    }
+    
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+        /* /-------------------------------------Carte------------------------------------------------------------*/ 
+   
+        
+        .card-container {
+            display: flex;
+            justify-content: center; 
+            gap: 15px;
+            margin: 1 auto; 
+            padding-bottom: 100px;
+        }
+        
+        .cards {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 257px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .cards:hover {
+            transform: translateY(-10px);
+        }
+        
+        .cards img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .cards h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        
+        .cards p {
+            padding: 0 20px;
+            font-size: 1em;
+            color: #555;
+        }
+        
+        .cards a {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .cards a:hover {
+            color: black;
+            background-color: #ffffff;
+        }
+        
+        
+
+/* /-------------------------------------Contact------------------------------------------------------------*/ 
+
+#contact {
+    font-family: Arial, sans-serif;
+    background-color: #b9b7b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+.contacte {
+    background-color: rgb(88, 82, 82);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(240, 235, 235, 0.1);
+    border-radius: 5px;
+    width: 300px;
+    padding-right: 20px;
+}
+
+.contacte h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.contacte label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contacte input,
+.contacte textarea {
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contacte button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contacte button:hover {
+    background-color: #707070;
+    color: black;
+}
+
+/* /-------------------------------------footer------------------------------------------------------------*/ 
+
+.footer-container {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 2px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-column .article-date {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons li {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
+.footer-copyright {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer-links ul li {
+    margin-left: 15px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links ul li :hover {
+    text-decoration: underline;
+}
+
+.logos{
+    height: 30px;
+}
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accès PDF sécurisé</title>
+</head>
+<body>
+  <button onclick="demanderMotDePasse()">Accéder au PDF</button>
+
+  <script>
+    function demanderMotDePasse() {
+      const motDePasseCorrect = "1234"; // 🔒 Change ce mot de passe
+      const saisie = prompt("Rentré le mdp");
+
+      if (saisie === motDePasseCorrect) {
+        window.open("monfichier.pdf", "_blank"); // Remplace par le chemin de ton PDF
+      } else {
+        alert("Mot de passe incorrect !");
+      }
+    }
+  </script>
+</body>
+</html>
